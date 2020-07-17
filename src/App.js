@@ -1,33 +1,42 @@
-import React from 'react';
+import React, {Component} from 'react';
+import IngredientList from './IngredientList';
+import BurgerPane from './BurgerPane';
 import './App.css';
-import IngredientList from './IngredientList'
-import BurgerPane from './BurgerPane'
 
-function App() {
+class App extends Component{
+  state = {
+    ingredients: this.props.ingredients,
+    stack: []
+  }
 
-  let ingredients = 
-    [
-      {name: 'Kaiser Bun', color: 'saddlebrown'},
-      {name: 'Sesame Bun', color: 'sandybrown'},
-      {name: 'Gluten Free Bun', color: 'peru'},
-      {name: 'Lettuce Wrap', color: 'olivedrab'},
-      {name: 'Beef Patty', color: '#3F250B'},
-      {name: 'Soy Patty', color: '#3F250B'},
-      {name: 'Black Bean Patty', color: '#3F250B'},
-      {name: 'Chicken Patty', color: 'burlywood'},
-      {name: 'Lettuce', color: 'lawngreen'},
-      {name: 'Tomato', color: 'tomato'},
-      {name: 'Bacon', color: 'maroon'},
-      {name: 'Onion', color: 'lightyellow'}
-    ]
+  handleClick = (e, id) => {
+    console.log(e.target.name)
+    const stackCopy = [...this.state.stack]
+    stackCopy.unshift(this.state.ingredients[id])
+    this.setState({
+      stack: stackCopy
+    })
+  }
 
+  handleClear = (e) => {
+    console.log("does this work?")
+    this.setState({
+      stack: []
+    })
+  }
 
-  return (
-    <div className="App">
-      <IngredientList ingredients={ingredients} />
-      <BurgerPane ingredients={ingredients} />
-    </div>
-  );
+  render(){
+    return(
+      <div className="App">
+        <div class="menu">
+          <IngredientList allIngredients={this.state.ingredients} moveIngredient={this.handleClick} />
+        </div>
+        <div class="stack">
+          <BurgerPane  burger={this.state.stack} clear={this.handleClear} />
+        </div> 
+      </div>
+    )
+  }
 }
 
 export default App;

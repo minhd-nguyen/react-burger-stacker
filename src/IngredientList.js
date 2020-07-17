@@ -1,35 +1,20 @@
-import React, {useState} from 'react'
+import React from 'react'
 
-const IngredientList = (props) => {
-    const [isAdded, setAdded]  = useState(false);
 
-    let ingredientsAdded = [];
-
-    const handleClick = (e) => {
-        // e.stopProppagation()
-        setAdded(!isAdded)
-        ingredientsAdded.push({list})
-        console.log(ingredientsAdded)
-    }
-
-    let list = props.ingredients.map((item) =>{
-        
-        return (
+const IngredientList = props => {
+    let mappedIngredients = props.allIngredients.map((ingredient, id) => 
+      <li key={id}>{ingredient.name} <button id="btn" name={ingredient.name} onClick={(e) => props.moveIngredient(e, id)}> Pick </button></li>)
+    return(
+      <div className="ingredientList">
+        <div><h2>Ingredient Menu:</h2></div>
+        <div class="list">
             <ul>
-                <li>
-                    {item.name}
-                    <input type="button" value="add" onClick={() => {handleClick(isAdded)}} />
-                </li>
+              {mappedIngredients}
             </ul>
-        )
-    })
-
-    return (
-        <div>
-            <h1>These are the ingredients we have:</h1>
-            {list}   
         </div>
+        
+      </div>
     )
-};
+  }
 
 export default IngredientList;

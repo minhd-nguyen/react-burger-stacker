@@ -1,6 +1,7 @@
 .App {
   text-align: center;
-  display: inline-flex;
+  display: flex;
+  align-items: flex-end;
 }
 
 .App-logo {
@@ -36,4 +37,63 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.burgerPane {
+  display: inline-block;
+
+}
+
+.bulletpoint {
+  position: relative;
+}
+
+.burggerStackingArea {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.stack {
+  text-align: center;
+  margin-left: 200px;
+  border: 10px solid green;
+  width: 500px;
+  height: 670px;
+}
+
+.menu {
+  text-align: centercs;
+  border: 10px solid green;
+  width: 500px;
+  height: 100%;
+}
+
+
+#btn {
+  padding: 3px;
+  margin-left: 5px;
+  background-color: rosybrown;
+  display: inline-block;
+  align-items: flex-end;
+}
+
+.ingredientList {
+  display: inline-block;
+  text-align: justify;
+}
+
+.list {
+  padding: 10px;
+  margin: 20px 20px;
+}
+
+h2 {
+  margin: 20px;
+  text-align: center;
+}
+
+li {
+  margin: 20px;
+  text-align: left;
 }
