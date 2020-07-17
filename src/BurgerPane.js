@@ -8,9 +8,7 @@ const BurgerPane = (props) => {
                 // states: 
                 // isAdd
                 // isClear
-
         )
-
 }
 
 export default BurgerPane
