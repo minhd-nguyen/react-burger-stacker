@@ -26,10 +26,8 @@ const IngredientList = (props) => {
 
     return (
         <div>
-            <h1>These are the ingredients we have: </h1>
-            <div>
-                {list}
-            </div>
+            <h1>These are the ingredients we have:</h1>
+            {list}   
         </div>
     )
 };

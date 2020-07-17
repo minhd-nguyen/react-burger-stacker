@@ -20,7 +20,7 @@ function App() {
       {name: 'Bacon', color: 'maroon'},
       {name: 'Onion', color: 'lightyellow'}
     ]
-  
+
 
   return (
     <div className="App">
