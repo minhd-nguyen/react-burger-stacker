@@ -3,7 +3,6 @@ import IngredientList from './IngredientList';
 import BurgerPane from './BurgerPane'
 import './App.css';
 
-
 const menuList = 
     [
       {name: 'Kaiser Bun', color: 'saddlebrown'},
@@ -19,7 +18,6 @@ const menuList =
       {name: 'Bacon', color: 'maroon'},
       {name: 'Onion', color: 'lightyellow'}
     ]
-
 
 function App(props) {
 
@@ -37,7 +35,6 @@ function App(props) {
     console.log("does this work?")
     setStack([])
   }
-
   
   return(
     <div className="App">
