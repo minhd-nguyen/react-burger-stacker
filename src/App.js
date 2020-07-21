@@ -11,10 +11,10 @@ class App extends Component{
 
   handleClick = (e, id) => {
     console.log(e.target.name)
-    const stackCopy = [...this.state.stack]
-    stackCopy.unshift(this.state.ingredients[id])
+    const newStack = [...this.state.stack]
+    newStack.unshift(this.state.ingredients[id])
     this.setState({
-      stack: stackCopy
+      stack: newStack
     })
   }
 

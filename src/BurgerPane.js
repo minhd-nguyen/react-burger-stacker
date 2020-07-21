@@ -11,7 +11,7 @@ const BurgerPane = (props) => {
             <button type="reset" onClick={props.clear} ><strong>Make New Burger</strong></button>
         </div>
         <hr></hr>
-        <div class="bulletpoint">
+        <div>
             <ul >
                 {newBurger}
             </ul>
